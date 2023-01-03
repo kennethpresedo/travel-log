@@ -27,7 +27,7 @@ app.use(logger('dev'))
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')))
 app.use(express.static(path.join(__dirname, 'build')))
 
-app.use('/api/todos', require('./routes/api/todos'))
+app.use('/api/travels', require('./routes/api/travels'))
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'))

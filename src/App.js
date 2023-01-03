@@ -2,117 +2,163 @@ import { useState, useEffect } from 'react'
 
 
 export default function App(){
-    const [todos, setTodos] = useState([])
-    const [completedTodos, setCompletedTodos] = useState([])
-    const [newTodo, setNewTodo] = useState({
+    const [travels, setTravels] = useState([])
+    const [completedTravels, setCompletedTravels] = useState([])
+    const [newTravel, setNewTravel] = useState({
         title: '',
-        completed: false
+        country: '',
+        season: '',
+        duration: '',
+        entry: '',
+        completed: true
     })
 
-    //createTodos
-    const createTodo = async () => {
-        const body = {...newTodo}
+    //createTravels
+    const createTravel = async () => {
+        const body = {...newTravel}
         try {
-            const response = await fetch('/api/todos', {
+            const response = await fetch('/api/travels', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(body)
             })
-            const createdTodo = await response.json()
-            const todosCopy = [createdTodo,...todos]
-            setTodos(todosCopy)
-            setNewTodo({
+            const createdTravel = await response.json()
+            const travelsCopy = [createdTravel,...travels]
+            setTravels(travelsCopy)
+            setNewTravel({
                 title: '',
-                completed: false
+                country: '',
+                season: '',
+                duration: '',
+                entry: '',
+                completed: true
             })
         } catch (error) {   
             console.error(error)
         }
     }
-    //deleteTodos
-    const deleteTodo = async (id) => {
-        try {
-            const index = completedTodos.findIndex((todo) => todo._id === id)
-            const completedTodosCopy = [...completedTodos]
-            const response = await fetch(`/api/todos/${id}`, {
-                method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            await response.json()
-            completedTodosCopy.splice(index, 1)
-            setCompletedTodos(completedTodosCopy)
-        } catch (error) {
-            console.error(error)
-        }
-    }
+    //deleteTravels
+    // const deleteTravel = async (id) => {
+    //     try {
+    //         const index = completedTravels.findIndex((travel) => travel._id === id)
+    //         const completedTravelsCopy = [...completedTravels]
+    //         const response = await fetch(`/api/travels/${id}`, {
+    //             method: 'DELETE',
+    //             headers: {
+    //                 'Content-Type': 'application/json'
+    //             }
+    //         })
+    //         await response.json()
+    //         completedTravelsCopy.splice(index, 1)
+    //         setCompletedTravels(completedTravelsCopy)
+    //     } catch (error) {
+    //         console.error(error)
+    //     }
+    // }
     //moveToCompleted
     const moveToCompleted = async (id) => {
         try {
-            const index = todos.findIndex((todo) => todo._id === id)
-            const todosCopy = [...todos]
-            const subject = todosCopy[index]
+            const index = travels.findIndex((travel) => travel._id === id)
+            const travelsCopy = [...travels]
+            const subject = travelsCopy[index]
             subject.completed = true 
-            const response = await fetch(`/api/todos/${id}`, {
+            const response = await fetch(`/api/travels/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(subject)
             })
-            const updatedTodo = await response.json()
-            const completedTDsCopy = [updatedTodo, ...completedTodos]
-            setCompletedTodos(completedTDsCopy)
-            todosCopy.splice(index, 1)
-            setTodos(todosCopy)
+            const updatedTravel = await response.json()
+            const completedTDsCopy = [updatedTravel, ...completedTravels]
+            setCompletedTravels(completedTDsCopy)
+            travelsCopy.splice(index, 1)
+            setTravels(travelsCopy)
         } catch (error) {
             console.error(error)
         }
     }
-    //getTodos
-    const getTodos = async () => {
+    //getTravels
+    const getTravels = async () => {
         try{
-            const response = await fetch('/api/todos')
-            const foundTodos = await response.json()
-            setTodos(foundTodos.reverse())
-            const responseTwo = await fetch('/api/todos/completed')
-            const foundCompletedTodos = await responseTwo.json()
-            setCompletedTodos(foundCompletedTodos.reverse())
+            const response = await fetch('/api/travels')
+            const foundTravels = await response.json()
+            setTravels(foundTravels.reverse())
+            const responseTwo = await fetch('/api/travels/completed')
+            const foundCompletedTravels = await responseTwo.json()
+            setCompletedTravels(foundCompletedTravels.reverse())
         } catch(error){
             console.error(error)
         }
     }
     useEffect(() => {
-        getTodos()
+        getTravels()
     }, [])
     return(<>
-        Add Todo:<input type="text" 
-        value={newTodo.title} 
+        Add City:<input type="text" 
+        value={newTravel.title} 
         onChange={(e) => {
-            setNewTodo({...newTodo, title: e.target.value})
+            setNewTravel({...newTravel, title: e.target.value})
         }} 
         onKeyDown={(e) => {
-            e.key === 'Enter' && createTodo()
+            e.key === 'Enter' && createTravel()
         }}
         />
-        <h3>Todos</h3>
-        {todos.map(todo => {
+        Add Country:<input type="text" 
+        value={newTravel.country} 
+        onChange={(e) => {
+            setNewTravel({...newTravel, country: e.target.value})
+        }} 
+        onKeyDown={(e) => {
+            e.key === 'Enter' && createTravel()
+        }}
+        />
+        Add Season:<input type="text" 
+        value={newTravel.season} 
+        onChange={(e) => {
+            setNewTravel({...newTravel, season: e.target.value})
+        }} 
+        onKeyDown={(e) => {
+            e.key === 'Enter' && createTravel()
+        }}
+        />
+        Add Duration:<input type="text" 
+        value={newTravel.duration} 
+        onChange={(e) => {
+            setNewTravel({...newTravel, duration: e.target.value})
+        }} 
+        onKeyDown={(e) => {
+            e.key === 'Enter' && createTravel()
+        }}
+        />
+        Add Entry:<input type="text" 
+        value={newTravel.entry} 
+        onChange={(e) => {
+            setNewTravel({...newTravel, entry: e.target.value})
+        }} 
+        onKeyDown={(e) => {
+            e.key === 'Enter' && createTravel()
+        }}
+        />
+        
+        
+        <h3>Travels</h3>
+        {travels.map(travel => {
             return(
-                <div key={todo._id}>{todo.title} 
-                    <button onClick={() => moveToCompleted(todo._id) }>Complete</button>
+                <div key={travel._id}>{travel.title} {travel.country}<br />{travel.season}<br />{travel.duration}<br />{travel.entry}<br />
+                    <button onClick={() => moveToCompleted(travel._id) }>Delete Travel</button>
                 </div>
             )})
         }
-        <h3>Completed Todos</h3>
-        {completedTodos.map(todo => {
+        {/* <h3>Completed Travels</h3>
+        {completedTravels.map(travel => {
             return(
-                <div key={todo._id}>{todo.title} 
-                    <button onClick={() => deleteTodo(todo._id) }>Delete</button>
+                <div key={travel._id}>{travel.title}{travel.country}{travel.season}{travel.duration}{travel.entry} 
+                    <button onClick={() => deleteTravel(travel._id) }>Delete</button>
                 </div>
             )})
-        }
+        } */}
     </>)
 }

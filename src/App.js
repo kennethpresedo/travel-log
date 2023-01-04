@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
-
-
 export default function App(){
+
     const [travels, setTravels] = useState([])
     const [completedTravels, setCompletedTravels] = useState([])
     const [newTravel, setNewTravel] = useState({

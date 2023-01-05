@@ -104,7 +104,7 @@ export default function App(){
         onKeyDown={(e) => {
             e.key === 'Enter' && createTravel()
         }}
-        />
+        /><br />
         Add Country:<input type="text" 
         value={newTravel.country} 
         onChange={(e) => {
@@ -113,7 +113,7 @@ export default function App(){
         onKeyDown={(e) => {
             e.key === 'Enter' && createTravel()
         }}
-        />
+        /><br />
         Add Season:<input type="text" 
         value={newTravel.season} 
         onChange={(e) => {
@@ -122,7 +122,7 @@ export default function App(){
         onKeyDown={(e) => {
             e.key === 'Enter' && createTravel()
         }}
-        />
+        /><br />
         Add Duration:<input type="text" 
         value={newTravel.duration} 
         onChange={(e) => {
@@ -131,7 +131,7 @@ export default function App(){
         onKeyDown={(e) => {
             e.key === 'Enter' && createTravel()
         }}
-        />
+        /><br />
         Add Entry:<input type="text" 
         value={newTravel.entry} 
         onChange={(e) => {

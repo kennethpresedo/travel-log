@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 import jwt_decode from "jwt-decode";
+import App from '../App';
 
 export default function SignIn(){
     const [ user, setUser ] = useState({});
+
 
     function handleCallbackResponse(response) {
         console.log("Encoded JWY ID Token: " + response.credential);
@@ -15,6 +17,7 @@ export default function SignIn(){
     function handleSignout(event) {
         setUser({});
         document.getElementById("signInDiv").hidden = false;
+        // document.getElementById("profile").hidden = true;
     };
 
 useEffect(() => {
@@ -31,17 +34,25 @@ useEffect(() => {
 }, []);
 
 return (
-    <div className="App">
-        <div id="signInDiv"></div>
+    <div className="AppSignIn">
+        <div id="signInDiv"></div><br/>
         { Object.keys(user).length !== 0 &&
            <button onClick={(e) => handleSignout(e)}>Sign Out</button>
+        
+        }
+
+         { Object.keys(user).length !== 0 &&
+          <App/>
+          
         }
     
         { user &&
         <div>
-            <img src={user.picture} alt="profile"></img>
-            <h3>{user.name}</h3>
+            <img id="profile"src={user.picture} alt=""></img>
+            <h3 id="signedinas">Signed in as: {user.name}</h3>
         </div>
         }
+
     </div>
+
 )}

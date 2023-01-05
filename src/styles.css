@@ -45,7 +45,7 @@
     width: 40%;
   }
   
-  .todolist {
+  .travellist {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,7 +54,7 @@
     max-width: calc(90vw - 4rem);
   }
   
-  .todolist > li {
+  .travellist > li {
     border: 0.1px solid white;
     /* box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7); */
     width: 100%;
@@ -67,7 +67,7 @@
     background-color: black;
   }
   
-  .todolist > li .left {
+  .travellist > li .left {
     flex-basis: 50%;
     display: flex;
     flex-direction: column;
@@ -75,15 +75,15 @@
     align-items: center;
   }
   
-  .todolist > li > .left input[type="text"] {
+  .travellist > li > .left input[type="text"] {
     width: 50%;
     height: 2rem;
   }
-  .todolist > li input[type="text"] {
+  .travellist > li input[type="text"] {
     margin-bottom: 1rem;
   }
   
-  .todolist > li label {
+  .travellist > li label {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -98,6 +98,10 @@
   button {
     background-color: antiquewhite;
     color: black;
+    border-radius: 10%;
   }
   
-  
+  .signInDiv {
+    display: flex;
+    align-items: flex-start;
+  }

@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import './styles.css'
+
 export default function App(){
 
     const [travels, setTravels] = useState([])
@@ -96,7 +98,7 @@ export default function App(){
         getTravels()
     }, [])
     return(<>
-        Add City:<input type="text" 
+        <input id="input" type="text" placeholder='City' 
         value={newTravel.title} 
         onChange={(e) => {
             setNewTravel({...newTravel, title: e.target.value})
@@ -105,7 +107,7 @@ export default function App(){
             e.key === 'Enter' && createTravel()
         }}
         /><br />
-        Add Country:<input type="text" 
+        <input id="input" type="text" placeholder='Country'
         value={newTravel.country} 
         onChange={(e) => {
             setNewTravel({...newTravel, country: e.target.value})
@@ -114,7 +116,7 @@ export default function App(){
             e.key === 'Enter' && createTravel()
         }}
         /><br />
-        Add Season:<input type="text" 
+        <input id="input" type="text" placeholder='Season'
         value={newTravel.season} 
         onChange={(e) => {
             setNewTravel({...newTravel, season: e.target.value})
@@ -123,7 +125,7 @@ export default function App(){
             e.key === 'Enter' && createTravel()
         }}
         /><br />
-        Add Duration:<input type="text" 
+        <input id="input" type="text" placeholder='Duration'
         value={newTravel.duration} 
         onChange={(e) => {
             setNewTravel({...newTravel, duration: e.target.value})
@@ -132,7 +134,7 @@ export default function App(){
             e.key === 'Enter' && createTravel()
         }}
         /><br />
-        Add Entry:<input type="text" 
+        <input id="input" type="text" placeholder='Entry'
         value={newTravel.entry} 
         onChange={(e) => {
             setNewTravel({...newTravel, entry: e.target.value})
@@ -143,11 +145,11 @@ export default function App(){
         />
         
         
-        <h3>Travels</h3>
+        <h3 id="travelh3">Travels</h3>
         {travels.map(travel => {
             return(
-                <div key={travel._id}>{travel.title} {travel.country}<br />{travel.season}<br />{travel.duration}<br />{travel.entry}<br />
-                    <button onClick={() => moveToCompleted(travel._id) }>Delete Travel</button>
+                <div id="travel" key={travel._id}>{travel.title} {travel.country}<br />{travel.season}<br />{travel.duration}<br />{travel.entry}<br />
+                    <button id="delete" onClick={() => moveToCompleted(travel._id) }>Delete Travel</button>
                 </div>
             )})
         }

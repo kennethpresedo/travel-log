@@ -10,6 +10,5 @@ root.render(
     <StrictMode>
         <h1>Welcome to your travel log!</h1>
         <SignIn/>
-
     </StrictMode>
 )

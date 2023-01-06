@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import jwt_decode from "jwt-decode";
 import App from '../App';
+import '../styles.css'
 
 export default function SignIn(){
     const [ user, setUser ] = useState({});
@@ -17,7 +18,6 @@ export default function SignIn(){
     function handleSignout(event) {
         setUser({});
         document.getElementById("signInDiv").hidden = false;
-        // document.getElementById("profile").hidden = true;
     };
 
 useEffect(() => {
@@ -28,7 +28,7 @@ useEffect(() => {
     });
     google.accounts.id.renderButton(
         document.getElementById("signInDiv"),
-        { theme: "outline", size: "large"}
+        { theme: "outline", size: "medium" }
     );
     google.accounts.id.prompt();
 }, []);
@@ -37,18 +37,15 @@ return (
     <div className="AppSignIn">
         <div id="signInDiv"></div><br/>
         { Object.keys(user).length !== 0 &&
-           <button onClick={(e) => handleSignout(e)}>Sign Out</button>
-        
-        }
-
-         { Object.keys(user).length !== 0 &&
           <App/>
-          
         }
-    
+           <br/><br/>
+        { Object.keys(user).length !== 0 &&
+           <button id="signout" onClick={(e) => handleSignout(e)}>Sign Out</button>
+        }
         { user &&
         <div>
-            <img id="profile"src={user.picture} alt=""></img>
+            {/* <img id="profile"src={user.picture} alt="photo"></img> */}
             <h3 id="signedinas">Signed in as: {user.name}</h3>
         </div>
         }

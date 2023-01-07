@@ -46,6 +46,7 @@ color:#636a5d;
   opacity: 2;
   font-size: 3em;
   margin-bottom: 1%;
+  color: #636a5d;
 }
 
 .AppSignIn {
@@ -93,7 +94,9 @@ color:#636a5d;
   text-align: center;
   opacity: 1;
   font-family: 'Italiana', serif;
-  font-weight: bolder;
+  font-weight: 1000;
+  background-color: #edebe8;
+  opacity: .7;
 }
 
 .AppSignIn>#input:hover {
@@ -105,6 +108,11 @@ color:#636a5d;
   opacity: 2;
   font-size: 3em;
   color:#636a5d;
+  border: 2px #9d8c84;
+  border-style: solid;
+  margin: 5em;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
 }
 
 h1 {
@@ -119,36 +127,44 @@ h1 {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat();
   font-size: 2em;
+  margin: 4em;
+  margin-bottom: .15em;
 }
+
+#pic {
+  display: none;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+#borrar {
+  cursor: pointer;
+  display: none;
+}
+
 #travel {
   display: table;
   clear: both;
-  border: 1px solid black;
-  padding: 20px;
+  border: 2px solid #9d8c84;
+  padding: 30px;
   /* background-color: #edebe8; */
   /* opacity: .6; */
   font-weight: 1000;
 }
 
 
-/* #travel:hover #borrar {
+#travel:hover #borrar{
   display: block;
-} */
-
-#table:hover #travel {
-  /* opacity: .4; */
-  background-color: transparent;
-  /* background-color: #edebe8;  */
- 
+  background-color: #edebe8;
+}
+#travel:hover #pic{
+  display: block;
+  background-color: #edebe8;
 }
 
+/* 
 #table #travel:hover {
   opacity: .7;
-  /* background-color: transparent; */
   background-color: #edebe8;
   font-size: 1.2em;
-}
-
-#borrar:hover {
-  cursor: pointer;
-}
+} */

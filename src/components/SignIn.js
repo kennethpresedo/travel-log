@@ -28,7 +28,7 @@ useEffect(() => {
     });
     google.accounts.id.renderButton(
         document.getElementById("signInDiv"),
-        { theme: "outline", size: "medium" }
+        { theme: "outline", size: "large", display: "flex", alignItems: "center", justifyContent: "center" }
     );
     google.accounts.id.prompt();
 }, []);

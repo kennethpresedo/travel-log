@@ -6,6 +6,7 @@ const travelSchema = new Schema({
     season: {required: true, type: String},
     duration: {required: true, type: String},
     year: {required: true, type: String},
+    pic: {required: false, type: String}, 
     completed: { required: true, type: String}
 }, {
     timestamps: true

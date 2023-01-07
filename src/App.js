@@ -11,6 +11,7 @@ export default function App(){
         season: '',
         duration: '',
         year: '',
+        pic: '',
         completed: true
     })
 
@@ -34,6 +35,7 @@ export default function App(){
                 season: '',
                 duration: '',
                 year: '',
+                pic: '',
                 completed: true
             })
         } catch (error) {   
@@ -142,8 +144,16 @@ export default function App(){
         onKeyDown={(e) => {
             e.key === 'Enter' && createTravel()
         }}
+        /><br />
+        <input id="input" type="text" alt="pic" placeholder='Picture (Optional)'
+        value={newTravel.pic} 
+        onChange={(e) => {
+            setNewTravel({...newTravel, pic: e.target.value})
+        }} 
+        onKeyDown={(e) => {
+            e.key === 'Enter' && createTravel()
+        }}
         />
-        
         
         <h3 id="travelh3">Travels</h3>
         <div id="table">
@@ -155,6 +165,7 @@ export default function App(){
                     Season: {travel.season}<br/>
                     Duration: {travel.duration}<br/>
                     Year: {travel.year}<br/>
+                    <img id="pic"src={`${travel.pic}`} alt=""></img>
                     <div id="borrar"onClick={() => moveToCompleted(travel._id) }>Delete</div>
                 </div>
             )})

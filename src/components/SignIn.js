@@ -40,14 +40,14 @@ return (
           <App/>
         }
            <br/><br/>
-        { Object.keys(user).length !== 0 &&
-           <button id="signout" onClick={(e) => handleSignout(e)}>Sign Out</button>
-        }
-        { user &&
+           { user &&
         <div>
             {/* <img id="profile"src={user.picture} alt="photo"></img> */}
             <h3 id="signedinas">Signed in as: {user.name}</h3>
         </div>
+        }
+        { Object.keys(user).length !== 0 &&
+           <button id="signout" onClick={(e) => handleSignout(e)}>Sign Out</button>
         }
 
     </div>

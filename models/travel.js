@@ -5,7 +5,7 @@ const travelSchema = new Schema({
     country: {required: true, type: String},
     season: {required: true, type: String},
     duration: {required: true, type: String},
-    entry: {required: true, type: String},
+    year: {required: true, type: String},
     completed: { required: true, type: String}
 }, {
     timestamps: true

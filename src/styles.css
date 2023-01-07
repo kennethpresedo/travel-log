@@ -1,26 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Roboto:wght@100&display=swap');
+
 #root {
+  font-family: 'Italiana', serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url("https://www.worldatlas.com/r/w960-q80/upload/cb/c3/8b/shutterstock-598679624.jpg");
+  /* background-image: url("https://www.worldatlas.com/r/w960-q80/upload/cb/c3/8b/shutterstock-598679624.jpg"); */
+  background-image: url("https://i.pinimg.com/736x/b0/d4/e0/b0d4e07799520a7a9489260e92f202fe.jpg");
   background-size: cover;
+
 }
 
-#delete {
+/* #delete {
   border-radius: 10%;
-  background-color: white;
+  background-color: transparent;
+  max-width: 3em;
+  max-height: 2em;
+  min-height: 3em;
+  min-width: 2em;
   display: flex;
-  align-self:start;
-}
+  justify-self: center;
+  align-self: center;
+} */
 
 #signout {
-  border-radius: 10%;
+  border-radius: 5%;
   background-color: white;
+  margin-bottom: 2%;
+  max-width: 30em;
+  min-width: 30em;
+  max-height: 2em;
+  min-height: 2em;
+  background-color: transparent;
+  font-size: 1em;
+}
+
+#signout:hover {
+font-size: 1.5em;
+background-color: #edebe8;
+color:#636a5d;
 }
 
 #signedinas {
-  color: red;
+  opacity: 2;
+  font-size: 3em;
+  margin-bottom: 1%;
 }
 
 .AppSignIn {
@@ -32,7 +57,7 @@
   margin: 0.15rem 0;
 }
 
-.AppSignIn>#travel {
+/* .AppSignIn>#travel {
   border: 0.1px solid white;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
   width: 100%;
@@ -44,11 +69,16 @@
   margin: 0.15rem 0;
   font-size: 2em;
   opacity: .8;
+  max-width: 25vw;
+  max-height: 35vh;
+  min-width: 25vh;
+  min-height: 35vh;
 }
-.AppSignIn>#travel:hover{
+
+.AppSignIn>#travel:hover {
   font-size: 2.5em;
   opacity: 2;
-}
+} */
 
 .AppSignIn>#input {
   /* display: flex; */
@@ -61,19 +91,64 @@
   font-size: 1em;
   border-radius: 5%;
   text-align: center;
-  opacity: 2;
+  opacity: 1;
+  font-family: 'Italiana', serif;
+  font-weight: bolder;
 }
-.AppSignIn>#input:hover{
+
+.AppSignIn>#input:hover {
   width: 22vw;
   height: 4vh;
 }
 
 #travelh3 {
-  color: yellow;
+  opacity: 2;
   font-size: 3em;
+  color:#636a5d;
 }
 
 h1 {
   font-size: 4.5em;
   text-align: center;
+  opacity: 2;
+  color:#636a5d;
+}
+
+.AppSignIn>#table {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat();
+  font-size: 2em;
+}
+#travel {
+  display: table;
+  clear: both;
+  border: 1px solid black;
+  padding: 20px;
+  /* background-color: #edebe8; */
+  /* opacity: .6; */
+  font-weight: 1000;
+}
+
+
+/* #travel:hover #borrar {
+  display: block;
+} */
+
+#table:hover #travel {
+  /* opacity: .4; */
+  background-color: transparent;
+  /* background-color: #edebe8;  */
+ 
+}
+
+#table #travel:hover {
+  opacity: .7;
+  /* background-color: transparent; */
+  background-color: #edebe8;
+  font-size: 1.2em;
+}
+
+#borrar:hover {
+  cursor: pointer;
 }

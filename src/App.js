@@ -10,7 +10,7 @@ export default function App(){
         country: '',
         season: '',
         duration: '',
-        entry: '',
+        year: '',
         completed: true
     })
 
@@ -33,7 +33,7 @@ export default function App(){
                 country: '',
                 season: '',
                 duration: '',
-                entry: '',
+                year: '',
                 completed: true
             })
         } catch (error) {   
@@ -134,10 +134,10 @@ export default function App(){
             e.key === 'Enter' && createTravel()
         }}
         /><br />
-        <input id="input" type="text" placeholder='Entry'
-        value={newTravel.entry} 
+        <input id="input" type="text" placeholder='Year'
+        value={newTravel.year} 
         onChange={(e) => {
-            setNewTravel({...newTravel, entry: e.target.value})
+            setNewTravel({...newTravel, year: e.target.value})
         }} 
         onKeyDown={(e) => {
             e.key === 'Enter' && createTravel()
@@ -146,20 +146,19 @@ export default function App(){
         
         
         <h3 id="travelh3">Travels</h3>
-        {travels.map(travel => {
+        <div id="table">
+        {travels.map (travel => {
             return(
-                <div id="travel" key={travel._id}>{travel.title} {travel.country}<br />{travel.season}<br />{travel.duration}<br />{travel.entry}<br />
-                    <button id="delete" onClick={() => moveToCompleted(travel._id) }>Delete Travel</button>
+                <div id="travel" key={travel._id}>
+                    City: {travel.title}<br/>
+                    Country: {travel.country}<br/>
+                    Season: {travel.season}<br/>
+                    Duration: {travel.duration}<br/>
+                    Year: {travel.year}<br/>
+                    <div id="borrar"onClick={() => moveToCompleted(travel._id) }>Delete</div>
                 </div>
             )})
         }
-        {/* <h3>Completed Travels</h3>
-        {completedTravels.map(travel => {
-            return(
-                <div key={travel._id}>{travel.title}{travel.country}{travel.season}{travel.duration}{travel.entry} 
-                    <button onClick={() => deleteTravel(travel._id) }>Delete</button>
-                </div>
-            )})
-        } */}
+        </div>
     </>)
 }

@@ -133,8 +133,12 @@ h1 {
 
 #pic {
   display: none;
-  overflow: hidden;
-  object-fit: cover;
+  /* overflow: hidden;
+  object-fit: cover; */
+  width: 100%; 
+  -webkit-transition: all 0.8s ease;
+ -moz-transition: all 0.8s ease;
+ transition: all 0.8s ease;
 }
 
 #borrar {
@@ -147,9 +151,8 @@ h1 {
   clear: both;
   border: 2px solid #9d8c84;
   padding: 30px;
-  /* background-color: #edebe8; */
-  /* opacity: .6; */
   font-weight: 1000;
+  overflow: hidden;
 }
 
 
@@ -157,11 +160,15 @@ h1 {
   display: block;
   background-color: #edebe8;
 }
-#travel:hover #pic{
+#travel:hover #pic {
   display: block;
   background-color: #edebe8;
-}
+  transform: scale(1.8,1.8);
 
+}
+/* #travel:hover {
+
+} */
 /* 
 #table #travel:hover {
   opacity: .7;

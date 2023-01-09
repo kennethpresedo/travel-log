@@ -6,7 +6,7 @@ This is your travel logger used to keep all travels in one place. App uses a gri
 # Technologies Used
 Full stack MERN single page application using the following hosted on Heroku: <br>
 MongoDB/ Mongoose<br>
-Express<br>
+Express via AJAX<br>
 React<br>
 Node.js<br>
 

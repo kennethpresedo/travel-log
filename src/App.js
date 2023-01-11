@@ -56,7 +56,7 @@ export default function App(){
     //         })
     //         await response.json()
     //         completedTravelsCopy.splice(index, 1)
-    //         setCompletedTravels(completedTravelsCopy)
+    //       setCompletedTravels(completedTravelsCopy)
     //     } catch (error) {
     //         console.error(error)
     //     }
@@ -69,7 +69,7 @@ export default function App(){
             const subject = travelsCopy[index]
             subject.completed = true 
             const response = await fetch(`/api/travels/${id}`, {
-                method: 'PUT',
+                method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'
                 },

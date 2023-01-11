@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './styles.css'
+import Toggle from './components/Toggle'
 
 export default function App(){
 
@@ -154,20 +155,22 @@ export default function App(){
             e.key === 'Enter' && createTravel()
         }}
         />
-        
+    
         <h3 id="travelh3">Travels</h3>
+        <Toggle/>
         <div id="table">
         {travels.map (travel => {
             return(
                 <div id="travel" key={travel._id}>
-                    City: {travel.title}<br/>
-                    Country: {travel.country}<br/>
-                    Season: {travel.season}<br/>
-                    Duration: {travel.duration}<br/>
-                    Year: {travel.year}<br/>
+                    <div className="info">City: {travel.title}</div>
+                    <div className="info">Country: {travel.country}</div>
+                    <div className="info">Season: {travel.season}</div>
+                    <div className="info">Duration: {travel.duration}</div>
+                    <div className="info">Year: {travel.year}</div>
                     <img id="pic"src={`${travel.pic}`} alt=""></img>
                     <div id="borrar"onClick={() => moveToCompleted(travel._id) }>Delete</div>
                 </div>
+                
             )})
         }
         </div>

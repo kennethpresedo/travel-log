@@ -34,5 +34,5 @@ app.get('*', (req, res) => {
 })
 
 app.listen(PORT, () => {
-    console.log(`I am listening on ${PORT}. We In the Building.`)
+    console.log(`I am listening on ${PORT}.`)
 })

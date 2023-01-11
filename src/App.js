@@ -43,24 +43,7 @@ export default function App(){
             console.error(error)
         }
     }
-    //deleteTravels
-    // const deleteTravel = async (id) => {
-    //     try {
-    //         const index = completedTravels.findIndex((travel) => travel._id === id)
-    //         const completedTravelsCopy = [...completedTravels]
-    //         const response = await fetch(`/api/travels/${id}`, {
-    //             method: 'DELETE',
-    //             headers: {
-    //                 'Content-Type': 'application/json'
-    //             }
-    //         })
-    //         await response.json()
-    //         completedTravelsCopy.splice(index, 1)
-    //       setCompletedTravels(completedTravelsCopy)
-    //     } catch (error) {
-    //         console.error(error)
-    //     }
-    // }
+
     //moveToCompleted
     const moveToCompleted = async (id) => {
         try {
@@ -157,7 +140,7 @@ export default function App(){
         />
     
         <h3 id="travelh3">Travels</h3>
-        <Toggle/>
+        {/* <Toggle/> */}
         <div id="table">
         {travels.map (travel => {
             return(

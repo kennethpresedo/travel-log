@@ -9,9 +9,16 @@
   /* background-image: url("https://www.worldatlas.com/r/w960-q80/upload/cb/c3/8b/shutterstock-598679624.jpg"); */
   background-image: url("https://i.pinimg.com/736x/b0/d4/e0/b0d4e07799520a7a9489260e92f202fe.jpg");
   background-size: cover;
-
 }
 
+/* #signInDiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10em;
+  margin-bottom: 5em;
+
+} */
 
 #signout {
   border-radius: 5%;
@@ -21,17 +28,26 @@
   min-width: 30em;
   max-height: 2em;
   min-height: 2em;
-  background-color: transparent;
+  /* background-color: transparent; */
+  background-color: #edebe8;
   font-size: 1em;
 }
 
 #signout:hover {
 font-size: 1.5em;
-background-color: #edebe8;
+/* background-color: #edebe8; */
+/* background-color: transparent; */
 color:#636a5d;
 }
 
 #signedinas {
+  opacity: 2;
+  font-size: 3em;
+  margin-bottom: 3%;
+  /* color: #636a5d; */
+}
+
+#signin {
   opacity: 2;
   font-size: 3em;
   margin-bottom: 1%;
@@ -94,8 +110,9 @@ h1 {
   grid-template-rows: repeat();
   font-size: 2em;
   margin: 4em;
-  margin-bottom: .15em;
+  margin-bottom: 2em;
   margin-top: 2em;
+
 }
 
 #pic {
@@ -226,3 +243,6 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+input:checked + .slider:after #travel{
+  display: none;
+}

@@ -28,7 +28,7 @@ useEffect(() => {
     });
     google.accounts.id.renderButton(
         document.getElementById("signInDiv"),
-        { theme: "outline", size: "large", display: "flex", alignItems: "center", justifyContent: "center" }
+        { theme: "outline", size: "large", marginLeft: "10em"  }
     );
     google.accounts.id.prompt();
 }, []);
@@ -42,14 +42,18 @@ return (
            <br/><br/>
            { user &&
         <div>
-            {/* <img id="profile"src={user.picture} alt="photo"></img> */}
-            <h3 id="signedinas">Signed in as: {user.name}</h3>
+            {/* <h3 id="signedinas">Signed in as: {user.name}</h3> */}
         </div>
         }
         { Object.keys(user).length !== 0 &&
            <button id="signout" onClick={(e) => handleSignout(e)}>Sign Out</button>
         }
-
+         { Object.keys(user).length !== 0 &&
+          <h3 id="signedinas">Signed in as: {user.name}</h3>
+        }
+         { Object.keys(user).length === 0 &&
+           <h3 id="signin">Sign in with Google</h3>
+        }
     </div>
 
 )}

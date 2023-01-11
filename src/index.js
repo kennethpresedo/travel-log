@@ -9,6 +9,8 @@ const root = createRoot(document.getElementById('root'))
 root.render(
     <StrictMode>
         <h1>Welcome to your travel log!</h1>
-        <SignIn/>
+        
+       <SignIn/>
+       <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     </StrictMode>
 )

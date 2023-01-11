@@ -11,7 +11,8 @@ React<br>
 Node.js<br>
 
 # Getting Started
-Application hosted on Heroku:<br>
+Application hosted on Azure:<br>
+https://mytravel-log.azurewebsites.net<br>
 <br>
 Trello Board:<br>
 https://trello.com/b/emlLeI70/travel-logger<br>

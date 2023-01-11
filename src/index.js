@@ -11,6 +11,6 @@ root.render(
         <h1>Welcome to your travel log!</h1>
         
        <SignIn/>
-       <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+       <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     </StrictMode>
 )

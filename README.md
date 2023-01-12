@@ -9,6 +9,8 @@ MongoDB/ Mongoose<br>
 Express via AJAX<br>
 React<br>
 Node.js<br>
+<img width="1680" alt="Screen Shot 2023-01-11 at 19 22 24" src="https://user-images.githubusercontent.com/110072790/211946684-48dbaaf4-52a2-4646-b0fd-bff2b91cd5ff.png">
+<img width="1680" alt="Screen Shot 2023-01-11 at 19 22 47" src="https://user-images.githubusercontent.com/110072790/211946697-4cfe5428-0665-45cc-8b5f-2ad041b73205.png">
 
 # Getting Started
 Application hosted on Azure:<br>

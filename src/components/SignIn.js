@@ -24,7 +24,8 @@ useEffect(() => {
     /* global google */ 
     google.accounts.id.initialize({
         client_id: "825489729678-clrtqnd9di725uap7ncige9p5vifm09a.apps.googleusercontent.com",
-        callback: handleCallbackResponse
+        callback: handleCallbackResponse,
+        Cross_Origin_Opener_Policy: "unsafe-none"
     });
     google.accounts.id.renderButton(
         document.getElementById("signInDiv"),
